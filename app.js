@@ -15,10 +15,9 @@ app.get('/edit', (req, res) => {
 
 app.use('/public', express.static(__dirname + '/public'));
 
-app.post('/', (req, res) => {
+app.post('/edit', (req, res) => {
     console.log('Got body', req.body);
     addToQuiz(req.body);
-    res.sendStatus(200);
     res.sendFile(__dirname + '/edit.html');
 });
 
