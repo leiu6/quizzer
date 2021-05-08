@@ -42,6 +42,12 @@ const prompt = document.querySelector(".quiz-text");
 const lower = document.querySelector(".questions");
 const leaderboard = document.querySelector(".points");
 let current = '';
+const start = document.querySelector("#start");
+
+start.onclick = () => {
+    start.style.display = 'none';
+    loadRandomQuestion();
+}
 
 function loadRandomQuestion() {
     let random = Math.floor(Math.random() * questions.length);
