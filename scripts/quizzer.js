@@ -24,20 +24,40 @@ let questions = [
     }
 ];
 
+let points = 0;
+
 const prompt = document.querySelector(".quiz-text");
 const lower = document.querySelector(".questions");
+const leaderboard = document.querySelector(".points");
 
 populate(questions[1]);
 
 function populate (question) {
     prompt.textContent = question.prompt;
 
+    leaderboard.textContent = points;
+
     for (let i = 0; i < question.answers.length; i++) {
         let entry = document.createElement("DIV");
 
-        entry.innerHTML = `<p class="question-text">${question.answers[i]} <button id="answer${i}">${i + 1}</button></p>`;
+        entry.innerHTML = `
 
+            <button class="answer" onclick="checkAnswer('${question.correct}','${question.answers[i]}')">${i + 1}</button>
+            <p class="text">${question.answers[i]}</p>
+
+        `;
         lower.appendChild(entry);
+    }
+}
+
+function checkAnswer(correct, answer) {
+    if (answer === correct) {
+        points += 10;
+        leaderboard.textContent = points;
+    }
+    else {
+        points -= 5;
+        leaderboard.textContent = points;
     }
 }
 
