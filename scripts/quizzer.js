@@ -21,6 +21,18 @@ let questions = [
         ],
         "correct": "France",
         "message": "Brie cheese originally comes from the country of France!"
+    },
+
+    {
+        "prompt": "What year was Heinz established?",
+        "answers": [
+            "1975",
+            "1920",
+            "1869",
+            "1750"
+        ],
+        "correct": "1869",
+        "message": "Heinz was established in 1869."
     }
 ];
 
