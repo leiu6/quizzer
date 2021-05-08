@@ -22,10 +22,57 @@ button {
 
 .quiz-prompt {
     width: 500px;
-    height: 700px;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.07);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     box-sizing: border-box;
     padding: 20px;
+}
+
+.upper {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.upper .quiz-text {
+    padding-left: 10px;
+}
+
+.upper .points {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower .questions div {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.lower .questions div .answer {
+    margin: 5px;
+} 
+
+.lower .questions div .text {
+    margin: 5px;
+}
+
+.lower .buttons {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
