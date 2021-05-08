@@ -41,10 +41,23 @@ let points = 0;
 const prompt = document.querySelector(".quiz-text");
 const lower = document.querySelector(".questions");
 const leaderboard = document.querySelector(".points");
+let current = '';
 
-populate(questions[1]);
+function loadRandomQuestion() {
+    let random = Math.floor(Math.random() * questions.length);
+
+    if (questions[random] === current) {
+        loadRandomQuestion();
+    }
+    else {
+        populate(questions[random]);
+    }
+}
 
 function populate (question) {
+    prompt.innerHTML = '';
+    lower.innerHTML = '';
+    current = question;
     prompt.textContent = question.prompt;
 
     leaderboard.textContent = points;
