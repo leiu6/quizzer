@@ -33,6 +33,18 @@ let questions = [
         ],
         "correct": "1869",
         "message": "Heinz was established in 1869."
+    },
+
+    {
+        "prompt": "Who was the inventor of alternating current electricity?",
+        "answers": [
+            "Nikola Tesla",
+            "Thomas Edison",
+            "Isaac Newton",
+            "Benjamin Franklin"
+        ],
+        "correct": "Nikola Tesla",
+        "message": "Nikola Tesla was involved in a fierce battle with Thomas Edison. Edison threatenend by Nikola's alternating current technology did everything he could to maintain his empire with direct current power"
     }
 ];
 
