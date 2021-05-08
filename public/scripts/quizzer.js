@@ -48,6 +48,10 @@ let questions = [
     }
 ];
 
+fetch("/public/list.json")
+    .then(response => response.json())
+    .then(data => questions = data.quiz);
+
 let points = 0;
 
 const prompt = document.querySelector(".quiz-text");
