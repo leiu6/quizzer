@@ -1,0 +1,19 @@
+{
+  "name": "quizzer",
+  "version": "1.0.0",
+  "description": "## Introduction",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leiu6/quizzer.git"
+  },
+  "author": "Leighton Mitchell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leiu6/quizzer/issues"
+  },
+  "homepage": "https://github.com/leiu6/quizzer#readme"
+}
