@@ -9,7 +9,26 @@
     </head>
 
     <body>
-        <p>Hello World</p>
+        <div class="quiz-prompt">
+            <div class="upper">
+                <p class="quiz-text"></p>
+            </div>
+
+            <div class="lower">
+                <!-- put the question buttons here -->
+
+                <div class="questions"></div>
+
+                <div class="buttons">
+                    <button id="next">Next Question</button>
+                    <button id="answer">Show Answer</button>
+                </div>
+            </div>
+
+            <div class="hidden overlay">
+                <!-- this is the overlay that shows if you get the question right -->
+            </div>
+        </div>
         <script src="/scripts/quizzer.js" type="text/javascript"></script>
     </body>
 </html>
