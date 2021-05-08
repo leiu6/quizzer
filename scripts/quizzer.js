@@ -41,12 +41,25 @@ let points = 0;
 const prompt = document.querySelector(".quiz-text");
 const lower = document.querySelector(".questions");
 const leaderboard = document.querySelector(".points");
+const next = document.querySelector("#next");
+const showAnswer = document.querySelector("#answer");
 let current = '';
 const start = document.querySelector("#start");
 
+document.querySelector(".quiz-prompt").style.display = 'none';
+
 start.onclick = () => {
     start.style.display = 'none';
+    document.querySelector(".quiz-prompt").style.display = 'block';
     loadRandomQuestion();
+}
+
+next.onclick = () => {
+    loadRandomQuestion();
+}
+
+showAnswer.onclick = () => {
+    prompt.textContent += '\nAnswer: ' + current.correct;
 }
 
 function loadRandomQuestion() {
@@ -85,10 +98,12 @@ function checkAnswer(correct, answer) {
     if (answer === correct) {
         points += 10;
         leaderboard.textContent = points;
+        loadRandomQuestion();
     }
     else {
         points -= 5;
         leaderboard.textContent = points;
+        loadRandomQuestion();
     }
 }
 
