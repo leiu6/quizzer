@@ -3,10 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>Edit</title>
+        <link rel="stylesheet" href="/public/styles/edit.css" type="text/css">
     </head>
 
     <body>
         <form action="/edit" method="POST">
+            <div class="upper">
             <label for="prompt">Prompt</labeL>
             <input id="prompt" type="text" name="prompt">
 
@@ -24,7 +26,8 @@
 
             <input id="message" name="message" type="text">
 
-            <button type="submit">Add</button>
+             <button type="submit">Add</button>
+            </div>
         </form>
 
         <table id="entries">
