@@ -83,6 +83,11 @@ showAnswer.onclick = () => {
 function loadRandomQuestion() {
     let random = Math.floor(Math.random() * questions.length);
 
+    if (counter === questions.length) {
+        sessionLedger = new Array();
+        counter = 0;
+    }
+
     if (questions[random] === current) {
         loadRandomQuestion();
     }
