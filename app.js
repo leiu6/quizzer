@@ -16,14 +16,20 @@ app.get('/edit', (req, res) => {
 app.use('/public', express.static(__dirname + '/public'));
 
 app.post('/edit', (req, res) => {
-    console.log('Got body', req.body);
     addToQuiz(req.body);
+    res.sendFile(__dirname + '/edit.html');
+});
+
+app.post('/remove', (req, res) => {
+    console.log(req.body);
+    removeFromQuiz(req.body);
     res.sendFile(__dirname + '/edit.html');
 });
 
 app.listen(8000);
 
 function addToQuiz(addition) {
+    console.log('wrong place');
     let list = JSON.parse(fs.readFileSync(__dirname + '/public/list.json'));
 
     let entry = {
@@ -39,6 +45,16 @@ function addToQuiz(addition) {
     };
 
     list.quiz.push(entry);
+
+    fs.writeFileSync(__dirname + '/public/list.json', JSON.stringify(list));
+}
+
+function removeFromQuiz(request) {
+    index = request.index;
+
+    let list = JSON.parse(fs.readFileSync(__dirname + '/public/list.json'));
+
+    list.quiz.splice(index, 1);
 
     fs.writeFileSync(__dirname + '/public/list.json', JSON.stringify(list));
 }

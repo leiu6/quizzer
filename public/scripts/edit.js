@@ -2,22 +2,22 @@ const entries = document.querySelector("#entries");
 
 fetch('/public/list.json')
     .then(response => response.json())
-    .then(data => {
-        populateTable(data.quiz);
-    });
+    .then(data => populateTable(data));
 
-function populateTable(quizArray) {
-    for (let i = 0; i < quizArray.length; i++) {
+function populateTable(data) {
+    for (let i = 0; i < data.quiz.length; i++) {
         let entry = document.createElement('TR');
 
-        entry.innerHTML = `
+        entry.innerHTML = `<td>${data.quiz[i].prompt}</td>`;
 
-            <td>${quizArray[i].prompt}</td>
-            <td>${quizArray[i].answers[0]}, ${quizArray[i].answers[1]}, ${quizArray[i].answers[2]}, ${quizArray[i].answers[3]}</td>
-            <td>${quizArray[i].correct}</td>
-            <td>${quizArray[i].message}</td>
-            <td><button class="deleteEntry" onclick="deleteEntry(${i})">X</button></td>
+        for (let j = 0; j < data.quiz[i].answers.length; j++) {
+            entry.innerHTML += `${data.quiz[i].answers[j]}<br>`;
+        }
 
+        entry.innerHTML += `</td>
+            <td>${data.quiz[i].correct}</td>
+            <td>${data.quiz[i].message}</td>
+            <td><form action="/remove" method="POST"><input type="hidden" value="${i}" name="index"><button type="submit">Delete</button></form></td>
         `;
 
         entries.appendChild(entry);
