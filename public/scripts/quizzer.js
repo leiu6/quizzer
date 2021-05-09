@@ -61,6 +61,8 @@ const next = document.querySelector("#next");
 const showAnswer = document.querySelector("#answer");
 let current = '';
 const start = document.querySelector("#start");
+let sessionLedger = new Array();
+let counter = 0;
 
 document.querySelector(".quiz-prompt").style.display = 'none';
 
@@ -84,8 +86,13 @@ function loadRandomQuestion() {
     if (questions[random] === current) {
         loadRandomQuestion();
     }
+    else if (sessionLedger.includes(questions[random])) {
+        loadRandomQuestion();
+    }
     else {
+        sessionLedger.push(questions[random]);
         populate(questions[random]);
+        counter++;
     }
 }
 
