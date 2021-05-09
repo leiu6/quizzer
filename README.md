@@ -2,19 +2,25 @@
 
 ## Introduction
 
-Welcome to Quizzer! Quizzer is a web app to create interactive quizzes.
+This is my project Quizzer. I am currently new in my journey of learning web development. This project is to help me learn and become familiar with Node.js and Express.
 
-Quizzer is simple! With a simple GUI interface JSON quiz files can be created and then questions can be randomly selected from them to quiz the user. The answers are then verified and the user is scored to gamify the studying process.
+## Features
 
-## Anticipated Features
+This project has many current features and more anticipated.
 
-- Quiz question sets stored in JSON and dynamically loaded
-- Built in grading system to turn studying into a game
-- GUI panel to edit JSON quizzes and add new questions
-- Node.js and Express.js backend to allow local storage of the quiz files
+- Javascript backend to allow editing of question sets
+- Randomly sorted but with no repeats
+- Grading system (partially implemented)
+- Ability to create multiple lists (anticipated)
+- User authentication to allow the site to become a major service for quiz creation (anticipated)
+- Different quiz formats and interactive elements such as drag and drop (anticipated)
 
-Currently this project is in development. Right now, I am in the process of implementing the grading system.
+## Technology Stack
+
+This project uses plain old HTML/CSS/Javascript for the front end. There are no librarys. The project only requires simple DOM manipulation so a front end framework is not necessary. I might eventually migrate the project over to something like React when my skills are better, but for now, a simple stack is better.
+
+The backend is using Node.js and Express.js. This allows me to serve up the various web pages and create an API to interface with local JSON files on the server. The quiz sets are stored in actual JSON files to allow easy editing. If I end up making this service multi-user and not just local, then I will have to implement some kind of database technology.
 
 ## Conclusion
 
-Currently this project is in development and is not even at the first version. Many of the features will be janky, or just won't work. So proceed with caution.
+This project is still very much in the early stages of development. I am working on getting this to a more functional state. If you want to play around with the code you can clone the repo. The entry point for the app is the file app.js. All of the NPM components should be located in the project itself.
