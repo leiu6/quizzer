@@ -2,16 +2,17 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const port = 3000;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
-})
+});
 
 app.use(bodyParser.urlencoded({ extended: true  }));
 
 app.get('/edit', (req, res) => {
     res.sendFile(__dirname + '/edit.html');
-})
+});
 
 app.use('/public', express.static(__dirname + '/public'));
 
@@ -26,7 +27,9 @@ app.post('/remove', (req, res) => {
     res.sendFile(__dirname + '/edit.html');
 });
 
-app.listen(8000);
+app.listen(port, () => {
+    console.log('Now listening on port ' + port);
+});
 
 function addToQuiz(addition) {
     console.log('wrong place');
