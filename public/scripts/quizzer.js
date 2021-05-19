@@ -77,7 +77,8 @@ next.onclick = () => {
 }
 
 showAnswer.onclick = () => {
-    prompt.textContent += '\nAnswer: ' + current.correct;
+    prompt.innerHTML = `${current.prompt}<br>
+    Answer: ${current.correct}`;
 }
 
 function loadRandomQuestion() {
